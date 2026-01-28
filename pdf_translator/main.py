@@ -24,6 +24,8 @@ def main():
     parser.add_argument("-o", "--output", help="출력 PDF 파일 경로 (기본: <입력파일>_ko.pdf)")
     parser.add_argument("--source", default="en", help="원본 언어 코드 (기본: en)")
     parser.add_argument("--target", default="ko", help="대상 언어 코드 (기본: ko)")
+    parser.add_argument("--api-key", help="OpenAI API 키 (또는 환경변수 OPENAI_API_KEY)")
+    parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI 모델 (기본: gpt-4o-mini)")
 
     args = parser.parse_args()
 
@@ -41,7 +43,7 @@ def main():
     print(f"       {len(pages)}페이지, {total_blocks}개 텍스트 블록 추출 완료")
 
     print(f"[2/3] {args.source} → {args.target} 번역 중...")
-    pages = translate_pages(pages, source=args.source, target=args.target)
+    pages = translate_pages(pages, source=args.source, target=args.target, api_key=args.api_key, model=args.model)
 
     print(f"[3/3] 번역 PDF 생성 중: {args.output}")
     generate_pdf(pages, args.output, args.input)
