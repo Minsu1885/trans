@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+pdf_translator/fonts/
+*.egg-info/
+dist/
+build/
