@@ -24,8 +24,8 @@ def main():
     parser.add_argument("-o", "--output", help="출력 PDF 파일 경로 (기본: <입력파일>_ko.pdf)")
     parser.add_argument("--source", default="en", help="원본 언어 코드 (기본: en)")
     parser.add_argument("--target", default="ko", help="대상 언어 코드 (기본: ko)")
-    parser.add_argument("--api-key", help="OpenAI API 키 (또는 환경변수 OPENAI_API_KEY)")
-    parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI 모델 (기본: gpt-4o-mini)")
+    parser.add_argument("--api-key", help="Gemini API 키 (또는 환경변수 GEMINI_API_KEY)")
+    parser.add_argument("--model", default="gemini-2.0-flash", help="Gemini 모델 (기본: gemini-2.0-flash)")
 
     args = parser.parse_args()
 
